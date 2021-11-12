@@ -1,3 +1,17 @@
+DROP DATABASE IF EXISTS Mercadolibre;
+CREATE DATABASE Mercadolibre;
+Use Mercadolibre;
+
+CREATE TABLE `Usuario` (
+nombre VARCHAR(50) NOT NULL,
+apellido VARCHAR(50) NOT NULL,
+telefono int NOT NULL,
+email VARCHAR(50) NOT NULL,
+idUsuario SMALLINT,
+pass CHAR(64) NOT NULL,
+PRIMARY KEY (idUsuario)
+);
+
 CREATE TABLE `Producto` (
 precio FLOAT NOT NULL,
 cantidad SMALLINT UNSIGNED NOT NULL,
@@ -27,3 +41,4 @@ CONSTRAINT fk_Compra_Usuario FOREIGN KEY (idComprador)
 
 ALTER TABLE `Usuario`
 ADD CONSTRAINT `UQ_Usuario_email` UNIQUE (`email`);
+
